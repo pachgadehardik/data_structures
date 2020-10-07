@@ -123,4 +123,28 @@ public class LinkedList {
 		return true;
 
 	}
+
+	public <T> void deleteGivenNode(LinkedList list, int data2) {
+		Node temp = list.head, prev = null;
+		// If head node itself holds the key to be deleted 
+        if (temp != null && temp.getKey().equals(data2)) 
+        { 
+            list.head = temp.getNext(); // Changed head 
+            return; 
+        } 
+  
+        // Search for the key to be deleted, keep track of the 
+        // previous node as we need to change temp.next 
+        while (temp != null && (!temp.getKey().equals(data2))) 
+        { 
+            prev = temp; 
+            temp = temp.getNext(); 
+        }     
+  
+        // If key was not present in linked list 
+        if (temp == null) return; 
+  
+        // Unlink the node from linked list 
+        prev.setNext(temp.getNext());
+	}
 }

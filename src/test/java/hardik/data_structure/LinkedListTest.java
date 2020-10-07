@@ -25,5 +25,11 @@ public class LinkedListTest {
 	public void getProperListInsertingAfterGivenElement() {
 		Assert.assertTrue(LinkedList.insertAfterNode(list, 50, 56));
 	}
+	
+	@Test
+	public void checkWhetherGivenNodeGetsDeleted() {
+		list.deleteGivenNode(list, 30);
+		Assert.assertEquals(null, list.search(list, 30));
+	}
 
 }
