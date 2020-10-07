@@ -1,5 +1,7 @@
 package hardik.data_structure;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  *
@@ -42,6 +44,36 @@ public class LinkedList
 		return list;
 		
 	}
+	
+	public static <T> LinkedList insertAtPosition(LinkedList list, int position) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the data to add at " + position + " position: ");
+		int data = sc.nextInt();
+
+		Node tempHead = list.head;
+		if (position < 1)
+			System.out.println("Invalid Position");
+		if (position == 1) {
+			Node newNode = new Node(data);
+			newNode.setNext(list.head);
+			list.head = newNode;
+		} else {
+			while (position-- != 0) {
+				if (position == 1) {
+					// adding Node at required position
+					Node newNode = new Node(data);
+					newNode.setNext(list.head.getNext());
+					list.head.setNext(newNode);
+					break;
+				}
+				list.head = list.head.getNext();
+			}
+			if (position != 1)
+				System.out.print("Position out of range");
+		}
+		return list;
+	}
+	
 	public static <T>void  printList(Node temp){
 	while(temp!=null) {
 		System.out.print(temp.getKey()+" ");

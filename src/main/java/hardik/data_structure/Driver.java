@@ -7,6 +7,7 @@ public class Driver {
 	public static void displayMenu() {
 		System.out.println("\n1-Create and Add in a LinkedList(append way)");
 		System.out.println("2-Create and Add in a LinkedList(Add to head way)");
+		System.out.println("3-Insert at the given position");
 		System.out.println("0-Exit");
 		System.out.println("Enter :");
 	}
@@ -14,7 +15,7 @@ public class Driver {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("LinkedList Operations: ");
-
+		LinkedList list = new LinkedList();
 		boolean flag = true;
 		while (flag) {
 			displayMenu();
@@ -22,7 +23,7 @@ public class Driver {
 			switch (op) {
 			case 1: // For creating and Adding data at the end
 				System.out.println("Adding elements at the end");
-				LinkedList list = new LinkedList();
+				
 				for (int i = 0; i < 3; i++) {
 					list = list.insert(list, sc.nextInt()); // 50, 30, 76
 				}
@@ -35,6 +36,13 @@ public class Driver {
 					list1 = list1.addToTop(list1, sc.nextInt()); // 50, 30, 76
 				}
 				LinkedList.printList(list1.head);
+				break;
+			case 3:
+				LinkedList.printList(list.head);				
+				System.out.println("Enter the position");
+				int position =sc.nextInt();
+				list.insertAtPosition(list, position);
+				LinkedList.printList(list.head);
 				break;
 			default:
 				flag = false;
