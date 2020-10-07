@@ -10,6 +10,7 @@ public class Driver {
 		System.out.println("3-Insert at the given position");
 		System.out.println("4-Delete 1st Element in the LinkedList");
 		System.out.println("5-Delete Last Element in the LinkedList");
+		System.out.println("6-Search for a key in LinkedList");
 		System.out.println("0-Exit");
 		System.out.println("Enter :");
 	}
@@ -24,9 +25,9 @@ public class Driver {
 			int op = sc.nextInt();
 			switch (op) {
 			case 1: // For creating and Adding data at the end
-				System.out.println("Adding elements at the end");
-
-				for (int i = 0; i < 3; i++) {
+				System.out.println("Adding n elements at the end");
+				int n = sc.nextInt();
+				for (int i = 0; i < n; i++) {
 					list = list.insert(list, sc.nextInt()); // 50, 30, 76
 				}
 				LinkedList.printList(list.head);
@@ -34,7 +35,8 @@ public class Driver {
 			case 2:
 				LinkedList list1 = new LinkedList();
 				System.out.println("Adding elements from head");
-				for (int i = 0; i < 3; i++) {
+				int n1 = sc.nextInt();
+				for (int i = 0; i < n1; i++) {
 					list1 = list1.addToTop(list1, sc.nextInt()); // 50, 30, 76
 				}
 				LinkedList.printList(list1.head);
@@ -59,6 +61,13 @@ public class Driver {
 				list.popLast(list);
 				System.out.println("\nAfter Deleting Last: \n");
 				LinkedList.printList(list.head);
+				break;
+			case 6:
+				LinkedList.printList(list.head);
+				System.out.println("Enter the key to serach in given List");
+				int data = sc.nextInt();
+				list.search(list, data);
+				break;
 			default:
 				flag = false;
 				break;

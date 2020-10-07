@@ -94,4 +94,19 @@ public class LinkedList {
 
 		return list;
 	}
+
+	public <T> void search(LinkedList list, int data) {
+
+		Node temp = list.head;
+		int count = 0;
+		while (temp != null && temp.getNext() != null) {
+			if (temp.getKey().equals(data)) {
+				System.out.println("Data present at " + (count + 1) + " Position");
+				break;
+			}
+			temp = temp.getNext();
+			count++;
+		}
+
+	}
 }
