@@ -11,6 +11,7 @@ public class Driver {
 		System.out.println("4-Delete 1st Element in the LinkedList");
 		System.out.println("5-Delete Last Element in the LinkedList");
 		System.out.println("6-Search for a key in LinkedList");
+		System.out.println("7-Insert after given Node");
 		System.out.println("0-Exit");
 		System.out.println("Enter :");
 	}
@@ -66,7 +67,15 @@ public class Driver {
 				LinkedList.printList(list.head);
 				System.out.println("Enter the key to serach in given List");
 				int data = sc.nextInt();
-				list.search(list, data);
+				LinkedList.search(list, data);
+				break;
+			case 7:
+				LinkedList.printList(list.head);
+				System.out.println("Enter the prev Node and new data: ");
+				int prevData = sc.nextInt();
+				int data1 = sc.nextInt();
+				LinkedList.insertAfterNode(list, data1, prevData);
+				LinkedList.printList(list.head);
 				break;
 			default:
 				flag = false;

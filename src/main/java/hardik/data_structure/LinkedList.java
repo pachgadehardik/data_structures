@@ -95,18 +95,31 @@ public class LinkedList {
 		return list;
 	}
 
-	public static <T> boolean search(LinkedList list, int data) {
+	public static <T> Node search(LinkedList list, int data) {
 
 		Node temp = list.head;
 		int count = 0;
 		while (temp != null && temp.getNext() != null) {
 			if (temp.getKey().equals(data)) {
 				System.out.println("Data present at " + (count + 1) + " Position");
-				break;
+				return temp;
 			}
 			temp = temp.getNext();
 			count++;
 		}
+		return null;
+	}
+
+	public static <T> boolean insertAfterNode(LinkedList list, int data, int prevNodeData) {
+		Node new_Node = new Node<Integer>(data);
+		Node tempPrevNode = search(list, prevNodeData);
+		if (tempPrevNode == null) {
+			return false;
+		}
+
+		new_Node.setNext(tempPrevNode.getNext());
+		tempPrevNode.setNext(new_Node);
+
 		return true;
 
 	}
