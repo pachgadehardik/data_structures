@@ -10,6 +10,23 @@ public class LinkedList {
 
 	Node head;
 
+	public <T> void insertOrderly(LinkedList list, int data) {
+		Node newNode = new Node(data);
+	    Node currentNode = list.head;
+	    Node previousNode = null;
+	    while(currentNode != null && data > (int)currentNode.getKey()){
+	      previousNode = currentNode;
+	      currentNode = currentNode.getNext();
+	    }
+	    // insertion at beginning of the list
+	    if(previousNode == null){
+	      list.head = newNode;
+	    }else{
+	      previousNode.setNext(newNode);
+	    }
+	    newNode.setNext(currentNode);
+	}
+	
 	public static <T> LinkedList insert(LinkedList list, T data) {
 		Node<T> new_Node = new Node<T>(data);
 //		new_Node.setNext(null);

@@ -13,6 +13,7 @@ public class Driver {
 		System.out.println("6-Search for a key in LinkedList");
 		System.out.println("7-Insert after given Node");
 		System.out.println("8-Delete the given Node");
+		System.out.println("9-Insert in Ordered LinkedList");
 		System.out.println("0-Exit");
 		System.out.println("Enter :");
 	}
@@ -84,6 +85,14 @@ public class Driver {
 				int data2 = sc.nextInt();
 				list.deleteGivenNode(list,data2);
 				list.printList(list.head);
+				break;
+			case 9:
+				System.out.println("Adding n elements orderly at the end");
+				int size = sc.nextInt();
+				for (int i = 0; i < size; i++) {
+					list.insertOrderly(list, sc.nextInt()); // 50, 30, 76
+				}
+				LinkedList.printList(list.head);
 				break;
 			default:
 				flag = false;
