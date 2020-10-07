@@ -8,6 +8,7 @@ public class Driver {
 		System.out.println("\n1-Create and Add in a LinkedList(append way)");
 		System.out.println("2-Create and Add in a LinkedList(Add to head way)");
 		System.out.println("3-Insert at the given position");
+		System.out.println("4-Delete 1st Element in the LinkedList");
 		System.out.println("0-Exit");
 		System.out.println("Enter :");
 	}
@@ -23,7 +24,7 @@ public class Driver {
 			switch (op) {
 			case 1: // For creating and Adding data at the end
 				System.out.println("Adding elements at the end");
-				
+
 				for (int i = 0; i < 3; i++) {
 					list = list.insert(list, sc.nextInt()); // 50, 30, 76
 				}
@@ -38,10 +39,17 @@ public class Driver {
 				LinkedList.printList(list1.head);
 				break;
 			case 3:
-				LinkedList.printList(list.head);				
+				LinkedList.printList(list.head);
 				System.out.println("Enter the position");
-				int position =sc.nextInt();
+				int position = sc.nextInt();
 				list.insertAtPosition(list, position);
+				LinkedList.printList(list.head);
+				break;
+			case 4:
+				System.out.println("Before Deleting: \n");
+				LinkedList.printList(list.head);
+				list.pop(list);
+				System.out.println("\nAfter Deleting: \n");
 				LinkedList.printList(list.head);
 				break;
 			default:
