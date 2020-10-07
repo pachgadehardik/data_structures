@@ -26,7 +26,22 @@ public class LinkedList
 		
 		return list;
 	}
-
+	
+	public static <T> LinkedList addToTop(LinkedList list, T data) {
+		
+		Node<T> new_Node = new Node<T>(data);
+		
+		if (list.head == null)
+			list.head = new_Node;
+		else {
+			Node tempNode = list.head;
+			list.head = new_Node;
+			list.head.setNext(tempNode);
+		}
+		
+		return list;
+		
+	}
 	public static <T>void  printList(Node temp){
 	while(temp!=null) {
 		System.out.print(temp.getKey()+" ");
