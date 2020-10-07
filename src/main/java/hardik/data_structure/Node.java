@@ -3,7 +3,7 @@ package hardik.data_structure;
 public class Node<K> {
 	private Node<K> next;
 	private K key;
-	
+
 	public Node(K key) {
 		this.key = key;
 		this.next = null;
@@ -24,7 +24,5 @@ public class Node<K> {
 	public void setKey(K key) {
 		this.key = key;
 	}
-	
-	
 
 }

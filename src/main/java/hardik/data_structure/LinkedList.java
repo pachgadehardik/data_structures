@@ -84,4 +84,14 @@ public class LinkedList {
 			temp = temp.getNext();
 		}
 	}
+
+	public <T> LinkedList popLast(LinkedList list) {
+		Node temp = list.head;
+		while (temp.getNext().getNext() != null) {
+			temp = temp.getNext();
+		}
+		temp.setNext(null);
+
+		return list;
+	}
 }

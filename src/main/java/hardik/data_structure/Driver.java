@@ -9,6 +9,7 @@ public class Driver {
 		System.out.println("2-Create and Add in a LinkedList(Add to head way)");
 		System.out.println("3-Insert at the given position");
 		System.out.println("4-Delete 1st Element in the LinkedList");
+		System.out.println("5-Delete Last Element in the LinkedList");
 		System.out.println("0-Exit");
 		System.out.println("Enter :");
 	}
@@ -52,6 +53,12 @@ public class Driver {
 				System.out.println("\nAfter Deleting: \n");
 				LinkedList.printList(list.head);
 				break;
+			case 5:
+				System.out.println("Before Deleting Last: \n");
+				LinkedList.printList(list.head);
+				list.popLast(list);
+				System.out.println("\nAfter Deleting Last: \n");
+				LinkedList.printList(list.head);
 			default:
 				flag = false;
 				break;
