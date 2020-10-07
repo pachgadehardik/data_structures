@@ -95,7 +95,7 @@ public class LinkedList {
 		return list;
 	}
 
-	public <T> void search(LinkedList list, int data) {
+	public static <T> boolean search(LinkedList list, int data) {
 
 		Node temp = list.head;
 		int count = 0;
@@ -107,6 +107,7 @@ public class LinkedList {
 			temp = temp.getNext();
 			count++;
 		}
+		return true;
 
 	}
 }
