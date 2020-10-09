@@ -1,28 +1,29 @@
 package hardik.data_structure;
 
-public class Node<K> {
-	private Node<K> next;
-	private K key;
+public class Node<T extends Comparable<T>> {
+	private Node<T> next;
+	private T key;
 
-	public Node(K key) {
+	public Node(T key) {
 		this.key = key;
 		this.next = null;
 	}
 
-	public Node<K> getNext() {
+	public Node<T> getNext() {
 		return next;
 	}
 
-	public void setNext(Node<K> next) {
+	public void setNext(Node<T> next) {
 		this.next = next;
 	}
 
-	public K getKey() {
+	public T getKey() {
 		return key;
 	}
 
-	public void setKey(K key) {
+	public void setKey(T key) {
 		this.key = key;
 	}
 
+	
 }

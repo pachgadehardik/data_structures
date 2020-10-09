@@ -9,21 +9,21 @@ public class LinkedListTest {
 	@Before
 	public void init() {
 		list = new LinkedList();
-		list = LinkedList.insert(list, 56);
-		list = LinkedList.insert(list, 30);
-		list = LinkedList.insert(list, 70);
+		list = list.insert(list, 56);
+		list = list.insert(list, 30);
+		list = list.insert(list, 70);
 	}
 
 	@Test
 	public void getSearchElementShouldReturnTrue() {
 
-		Assert.assertEquals(30, LinkedList.search(list, 30).getKey());
+		Assert.assertEquals(30, list.search(list, 30).getKey());
 
 	}
 
 	@Test
 	public void getProperListInsertingAfterGivenElement() {
-		Assert.assertTrue(LinkedList.insertAfterNode(list, 50, 56));
+		Assert.assertTrue(list.insertAfterNode(list, 50, 56));
 	}
 	
 	@Test

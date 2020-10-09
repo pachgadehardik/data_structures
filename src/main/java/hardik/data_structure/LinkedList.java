@@ -6,15 +6,15 @@ import java.util.Scanner;
  * Hello world!
  *
  */
-public class LinkedList {
+public class LinkedList <T extends Comparable<T>> {
 
-	Node head;
-
-	public <T> void insertOrderly(LinkedList list, int data) {
-		Node newNode = new Node(data);
-	    Node currentNode = list.head;
-	    Node previousNode = null;
-	    while(currentNode != null && data > (int)currentNode.getKey()){
+	Node<T> head;
+	
+	public void insertOrderly(LinkedList<T> list, T data) {
+		Node<T> newNode = new Node<>(data);
+	    Node<T> currentNode = list.head;
+	    Node<T> previousNode = null;
+	    while(currentNode != null && data.compareTo(currentNode.getKey()) > 0 ){
 	      previousNode = currentNode;
 	      currentNode = currentNode.getNext();
 	    }
@@ -27,7 +27,7 @@ public class LinkedList {
 	    newNode.setNext(currentNode);
 	}
 	
-	public static <T> LinkedList insert(LinkedList list, T data) {
+	public LinkedList<T> insert(LinkedList<T> list, T data) {
 		Node<T> new_Node = new Node<T>(data);
 //		new_Node.setNext(null);
 
@@ -44,14 +44,14 @@ public class LinkedList {
 		return list;
 	}
 
-	public static <T> LinkedList addToTop(LinkedList list, T data) {
+	public LinkedList<T> addToTop(LinkedList<T> list, T data) {
 
 		Node<T> new_Node = new Node<T>(data);
 
 		if (list.head == null)
 			list.head = new_Node;
 		else {
-			Node tempNode = list.head;
+			Node<T> tempNode = list.head;
 			list.head = new_Node;
 			list.head.setNext(tempNode);
 		}
@@ -59,24 +59,23 @@ public class LinkedList {
 		return list;
 
 	}
-
-	public static <T> LinkedList insertAtPosition(LinkedList list, int position) {
+	
+	public LinkedList<T> insertAtPosition(LinkedList<T> list, int position) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the data to add at " + position + " position: ");
 		int data = sc.nextInt();
-
-		Node tempHead = list.head;
+		Node<T> tempHead = list.head;
+		Node<T> newNode = new Node(data);
+		
 		if (position < 1)
 			System.out.println("Invalid Position");
 		if (position == 1) {
-			Node newNode = new Node(data);
 			newNode.setNext(list.head);
 			list.head = newNode;
 		} else {
 			while (position-- != 0) {
 				if (position == 1) {
 					// adding Node at required position
-					Node newNode = new Node(data);
 					newNode.setNext(list.head.getNext());
 					list.head.setNext(newNode);
 					break;
@@ -87,23 +86,24 @@ public class LinkedList {
 				System.out.print("Position out of range");
 		}
 		return list;
+
 	}
 
-	public <T> LinkedList pop(LinkedList list) {
-		Node temp = list.head;
+	public LinkedList<T> pop(LinkedList<T> list) {
+		Node<T> temp = list.head;
 		list.head = temp.getNext();
 		return list;
 	}
 
-	public static <T> void printList(Node<?> temp) {
+	public void printList(Node<T> temp) {
 		while (temp != null) {
 			System.out.print(temp.getKey() + " ");
 			temp = temp.getNext();
 		}
 	}
 
-	public <T> LinkedList popLast(LinkedList list) {
-		Node temp = list.head;
+	public LinkedList<T> popLast(LinkedList<T> list) {
+				Node<T> temp = list.head;
 		while (temp.getNext().getNext() != null) {
 			temp = temp.getNext();
 		}
@@ -112,9 +112,9 @@ public class LinkedList {
 		return list;
 	}
 
-	public static <T> Node search(LinkedList list, int data) {
+	public Node<T> search(LinkedList<T> list, int data) {
 
-		Node temp = list.head;
+		Node<T> temp = list.head;
 		int count = 0;
 		while (temp != null && temp.getNext() != null) {
 			if (temp.getKey().equals(data)) {
@@ -127,9 +127,9 @@ public class LinkedList {
 		return null;
 	}
 
-	public static <T> boolean insertAfterNode(LinkedList list, int data, int prevNodeData) {
-		Node new_Node = new Node<Integer>(data);
-		Node tempPrevNode = search(list, prevNodeData);
+	public boolean insertAfterNode(LinkedList<T> list, int data, int prevNodeData) {
+		Node<T> new_Node = new Node(data);
+		Node<T> tempPrevNode = search(list, prevNodeData);
 		if (tempPrevNode == null) {
 			return false;
 		}
@@ -141,8 +141,8 @@ public class LinkedList {
 
 	}
 
-	public <T> void deleteGivenNode(LinkedList list, int data2) {
-		Node temp = list.head, prev = null;
+	public void deleteGivenNode(LinkedList<T> list, int data2) {
+		Node<T> temp = list.head, prev = null;
 		// If head node itself holds the key to be deleted
 		if (temp != null && temp.getKey().equals(data2)) {
 			list.head = temp.getNext(); // Changed head
