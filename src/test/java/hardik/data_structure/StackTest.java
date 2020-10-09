@@ -16,9 +16,6 @@ public class StackTest {
 		stack.push(56);
 		stack.push(30);
 		stack.push(70);
-//		stack.addToTop(stack, 56);
-//		stack.addToTop(stack, 30);
-//		stack.addToTop(stack, 70);
 	}
 
 	@Test
