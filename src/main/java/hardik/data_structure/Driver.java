@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Driver {
 
 	public static void displayMenu() {
+		System.out.println("------------LinkedList Operations--------------------------------");
 		System.out.println("\n1-Create and Add in a LinkedList(append way)");
 		System.out.println("2-Create and Add in a LinkedList(Add to head way)");
 		System.out.println("3-Insert at the given position");
@@ -14,13 +15,17 @@ public class Driver {
 		System.out.println("7-Insert after given Node");
 		System.out.println("8-Delete the given Node");
 		System.out.println("9-Insert in Ordered LinkedList");
+		System.out.println("-------------Stack Using LinkedList-------------------------------------");
+		System.out.println("10-Push n Elemnts in the Stack");
+		System.out.println("11-Peek and Pop Elements from the Stack");
 		System.out.println("0-Exit");
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("LinkedList Operations: ");
 		LinkedList<Integer> list = new LinkedList<>();
+		Stack<Integer> stack = new Stack<>();
 		boolean flag = true;
 		while (flag) {
 			displayMenu();
@@ -94,14 +99,24 @@ public class Driver {
 				list.printList(list.head);
 				break;
 			case 10:
-				System.out.println("Adding elements from head");
+				System.out.println("Pushing n Elements in the Stack");
 				int n2 = sc.nextInt();
-				Stack stack = new Stack();
+				
 				for (int i = 0; i < n2; i++) {
-					stack.push(sc.nextInt());// 50, 30, 76
+					stack.push(sc.nextInt());// 56, 30, 70
 				}
-				System.out.println(stack.peekStack());
+				stack.printStack();
 				break;
+			case 11:
+				System.out.println("Popping Elements from the Stack");
+				System.out.println("Peek Element is");System.out.println(stack.peekStack());
+				try {
+					stack.popFromStack();
+					stack.printStack();
+					break;
+				} catch (Exception e) {
+					System.out.println("Stack Underflowing");
+				}
 			default:
 				flag = false;
 				break;
