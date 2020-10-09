@@ -18,6 +18,8 @@ public class Driver {
 		System.out.println("-------------Stack Using LinkedList-------------------------------------");
 		System.out.println("10-Push n Elemnts in the Stack");
 		System.out.println("11-Peek and Pop Elements from the Stack");
+		System.out.println("------------Queue-----------------");
+		System.out.println("12-Enque Elements in the Queue:");
 		System.out.println("0-Exit");
 	}
 
@@ -26,6 +28,8 @@ public class Driver {
 		System.out.println("LinkedList Operations: ");
 		LinkedList<Integer> list = new LinkedList<>();
 		Stack<Integer> stack = new Stack<>();
+		Queue<Integer> queue = new Queue<>();
+		
 		boolean flag = true;
 		while (flag) {
 			displayMenu();
@@ -101,7 +105,6 @@ public class Driver {
 			case 10:
 				System.out.println("Pushing n Elements in the Stack");
 				int n2 = sc.nextInt();
-				
 				for (int i = 0; i < n2; i++) {
 					stack.push(sc.nextInt());// 56, 30, 70
 				}
@@ -117,6 +120,25 @@ public class Driver {
 				} catch (Exception e) {
 					System.out.println("Stack Underflowing");
 				}
+			case 12:
+				System.out.println("Enque n Elements in the Queue: ");
+				int n3 = sc.nextInt();
+				for(int i =0;i<n3;i++) {
+					queue.enQueue(sc.nextInt());
+				}
+				queue.printQueue();
+				break;
+			case 13:
+				try {
+				System.out.println("Dequeue Elements in the Queue: ");
+				queue.deQueue();
+				queue.printQueue();
+				break;
+				}
+				catch(Exception e){
+					System.out.println("Queue is Empty");
+				}
+				break;
 			default:
 				flag = false;
 				break;
