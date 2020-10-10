@@ -1,6 +1,5 @@
 package hardik.data_structure;
 
-import java.io.NotActiveException;
 
 import org.junit.Assert;
 import org.junit.Before;

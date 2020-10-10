@@ -19,7 +19,8 @@ public class Driver {
 		System.out.println("10-Push n Elemnts in the Stack");
 		System.out.println("11-Peek and Pop Elements from the Stack");
 		System.out.println("------------Queue-----------------");
-		System.out.println("12-Enque Elements in the Queue:");
+		System.out.println("12-Enque Elements in the Queue: ");
+		System.out.println("13-Deque Elements in the Queue: ");
 		System.out.println("0-Exit");
 	}
 
@@ -29,7 +30,7 @@ public class Driver {
 		LinkedList<Integer> list = new LinkedList<>();
 		Stack<Integer> stack = new Stack<>();
 		Queue<Integer> queue = new Queue<>();
-		
+
 		boolean flag = true;
 		while (flag) {
 			displayMenu();
@@ -91,7 +92,7 @@ public class Driver {
 				list.printList(list.head);
 				System.out.println("Enter the given Node: ");
 				int data2 = sc.nextInt();
-				list.deleteGivenNode(list,data2);
+				list.deleteGivenNode(list, data2);
 				list.printList(list.head);
 				break;
 			case 9:
@@ -112,7 +113,8 @@ public class Driver {
 				break;
 			case 11:
 				System.out.println("Popping Elements from the Stack");
-				System.out.println("Peek Element is");System.out.println(stack.peekStack());
+				System.out.println("Peek Element is");
+				System.out.println(stack.peekStack());
 				try {
 					stack.popFromStack();
 					stack.printStack();
@@ -123,22 +125,20 @@ public class Driver {
 			case 12:
 				System.out.println("Enque n Elements in the Queue: ");
 				int n3 = sc.nextInt();
-				for(int i =0;i<n3;i++) {
+				for (int i = 0; i < n3; i++) {
 					queue.enQueue(sc.nextInt());
 				}
 				queue.printQueue();
 				break;
 			case 13:
 				try {
-				System.out.println("Dequeue Elements in the Queue: ");
-				queue.deQueue();
-				queue.printQueue();
-				break;
-				}
-				catch(Exception e){
+					System.out.println("Dequeue Elements in the Queue: ");
+					queue.deQueue();
+					queue.printQueue();
+					break;
+				} catch (Exception e) {
 					System.out.println("Queue is Empty");
 				}
-				break;
 			default:
 				flag = false;
 				break;
