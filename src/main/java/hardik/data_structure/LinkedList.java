@@ -164,7 +164,7 @@ public class LinkedList <T extends Comparable<T>> {
 		prev.setNext(temp.getNext());
 	}
 
-	//Inserting Node in the LinkedList
+	//Inserting Node in the LinkedList HashMap
 	public LinkedList<T> appendNode(LinkedList<T> list, INode<T> data) {
 		if (list.head == null) {
 			list.head = data;
