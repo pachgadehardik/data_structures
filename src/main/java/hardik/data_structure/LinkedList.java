@@ -179,6 +179,31 @@ public class LinkedList <T extends Comparable<T>> {
 		return list;
 	}
 	
+	public void deleteGivenMapNode(LinkedList<T> list, T data2) {
+		INode<T> temp = list.head;
+		INode<T> prev = null;
+		// If head node itself holds the key to be deleted
+		if (temp != null && temp.getKey().equals(data2)) {
+			list.head = temp.getNext(); // Changed head
+			return;
+		}
+
+		// Search for the key to be deleted, keep track of the
+		// previous node as we need to change temp.next
+		while (temp != null && (!temp.getKey().equals(data2))) {
+			prev = temp;
+			temp = temp.getNext();
+		}
+
+		// If key was not present in linked list
+		if (temp == null) {
+			System.out.println("Given Key does not Exist");
+			return;
+
+		}
+		// Unlink the node from linked list
+		prev.setNext(temp.getNext());
+	}
 	@Override
 	public String toString() {
 		return "LinkedList [head=" + head + "]";

@@ -52,6 +52,16 @@ public class MyLinkedHashMap<K extends Comparable<K>,V extends Comparable<V>> {
 	public String toString() {
 		return "MyLinkedHashMap [myBucketArray=" + myBucketArray + "]";
 	}
+
+	public void remove(K key) {
+		int index = this.getBucketIndex(key);
+		
+		LinkedList<K> myLinkedList = this.myBucketArray.get(index);
+		if(myLinkedList == null) System.out.println("Given List does not Exist!!");
+		myLinkedList.deleteGivenMapNode(myLinkedList, key);
+		System.out.println();
+		
+	}
 	
 	
 }

@@ -23,7 +23,8 @@ public class Driver {
 		System.out.println("13-Deque Elements in the Queue: ");
 		System.out.println("-----------------HashTable using LinkedList------------------------------");
 		System.out.println("14-Creating Hashtable using LinkedList and DO the Operations: ");
-		System.out.println("15-Creating LinkedHashMaps for creating multiple index wise LinkedList: ");
+		System.out.println(
+				"15-Creating LinkedHashMaps for creating multiple index wise LinkedList and deleting any given word: ");
 		System.out.println("0-Exit");
 	}
 
@@ -169,10 +170,13 @@ public class Driver {
 						value = value + 1;
 					myLinkedHashMap.add(word, value);
 				}
-
 				System.out.println(myLinkedHashMap);
 				int frequency = myLinkedHashMap.get("paranoid");
-				System.out.println("Frequency is : "+frequency);
+				System.out.println("Frequency is : " + frequency);
+				System.out.println("Enter the word to remove from the phrase: ");
+				String wordToRemove = sc.next();
+				myLinkedHashMap.remove(wordToRemove);
+				System.out.println(myLinkedHashMap);
 				break;
 			default:
 				flag = false;
