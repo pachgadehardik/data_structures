@@ -34,7 +34,7 @@ public class Stack<T extends Comparable<T>>{
 	 * Showing Top element in stack
 	 */
 	public T peekStack() throws Exception {
-		Node<T> tempNode = stack.head;
+		INode<T> tempNode = stack.head;
 		if (tempNode != null)
 			return stack.head.getKey();
 		else {
@@ -47,7 +47,7 @@ public class Stack<T extends Comparable<T>>{
 	 * Display Stack Elements
 	 */
 	public void printStack() {
-		Node<T> headNode = stack.head;
+		INode<T> headNode = stack.head;
 		System.out.println(headNode);
 		while (headNode != null) {
 			System.out.print(headNode.getKey() + " \n");

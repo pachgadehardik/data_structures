@@ -1,7 +1,7 @@
 package hardik.data_structure;
 
-public class Node<T extends Comparable<T>> {
-	private Node<T> next;
+public class Node<T extends Comparable<T>> implements INode<T> {
+	private INode<T> next;
 	private T key;
 
 	public Node(T key) {
@@ -9,12 +9,12 @@ public class Node<T extends Comparable<T>> {
 		this.next = null;
 	}
 
-	public Node<T> getNext() {
+	public INode<T> getNext() {
 		return next;
 	}
 
-	public void setNext(Node<T> next) {
-		this.next = next;
+	public void setNext(INode<T> head) {
+		this.next = head;
 	}
 
 	public T getKey() {

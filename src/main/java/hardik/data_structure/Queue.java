@@ -35,7 +35,7 @@ public class Queue<T extends Comparable<T>> {
 	 * Displaying Queue Elements
 	 */
 	public void printQueue() {
-		Node<T> headNode = queue.head;
+		INode<T> headNode = queue.head;
 		System.out.println("Queue Elements are-");
 		while (headNode != null) {
 			System.out.print(headNode.getKey() + " \n");

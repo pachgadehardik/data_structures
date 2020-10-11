@@ -8,12 +8,12 @@ import java.util.Scanner;
  */
 public class LinkedList <T extends Comparable<T>> {
 
-	Node<T> head;
+	INode<T> head;
 	
 	public void insertOrderly(LinkedList<T> list, T data) {
-		Node<T> newNode = new Node<>(data);
-	    Node<T> currentNode = list.head;
-	    Node<T> previousNode = null;
+		INode<T> newNode = (INode<T>) new Node(data);
+	    INode<T> currentNode = list.head;
+	    INode<T> previousNode = null;
 	    while(currentNode != null && data.compareTo(currentNode.getKey()) > 0 ){
 	      previousNode = currentNode;
 	      currentNode = currentNode.getNext();
@@ -28,13 +28,13 @@ public class LinkedList <T extends Comparable<T>> {
 	}
 	
 	public LinkedList<T> insert(LinkedList<T> list, T data) {
-		Node<T> new_Node = new Node<T>(data);
+		INode<T> new_Node = new Node<T>(data);
 //		new_Node.setNext(null);
 
 		if (list.head == null) {
 			list.head = new_Node;
 		} else {
-			Node<T> last = list.head;
+			INode<T> last = list.head;
 			while (last.getNext() != null) {
 				last = last.getNext();
 			}
@@ -46,12 +46,12 @@ public class LinkedList <T extends Comparable<T>> {
 
 	public LinkedList<T> addToTop(LinkedList<T> list, T data) {
 
-		Node<T> new_Node = new Node<T>(data);
+		INode<T> new_Node = (INode<T>) new Node<T>(data);
 
 		if (list.head == null)
 			list.head = new_Node;
 		else {
-			Node<T> tempNode = list.head;
+			INode<T> tempNode = list.head;
 			list.head = new_Node;
 			list.head.setNext(tempNode);
 		}
@@ -64,7 +64,7 @@ public class LinkedList <T extends Comparable<T>> {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the data to add at " + position + " position: ");
 		int data = sc.nextInt();
-		Node<T> tempHead = list.head;
+		INode<T> tempHead = list.head;
 		Node<T> newNode = new Node(data);
 		
 		if (position < 1)
@@ -90,12 +90,12 @@ public class LinkedList <T extends Comparable<T>> {
 	}
 
 	public LinkedList<T> pop(LinkedList<T> list) {
-		Node<T> temp = list.head;
+		INode<T> temp = list.head;
 		list.head = temp.getNext();
 		return list;
 	}
 
-	public void printList(Node<T> temp) {
+	public void printList(INode<T> temp) {
 		while (temp != null) {
 			System.out.print(temp.getKey() + " ");
 			temp = temp.getNext();
@@ -103,7 +103,7 @@ public class LinkedList <T extends Comparable<T>> {
 	}
 
 	public LinkedList<T> popLast(LinkedList<T> list) {
-				Node<T> temp = list.head;
+				INode<T> temp = list.head;
 		while (temp.getNext().getNext() != null) {
 			temp = temp.getNext();
 		}
@@ -112,13 +112,12 @@ public class LinkedList <T extends Comparable<T>> {
 		return list;
 	}
 
-	public Node<T> search(LinkedList<T> list, int data) {
+	public INode<T> search(LinkedList<T> list, T data) {
 
-		Node<T> temp = list.head;
+		INode<T> temp = list.head;
 		int count = 0;
 		while (temp != null && temp.getNext() != null) {
 			if (temp.getKey().equals(data)) {
-				System.out.println("Data present at " + (count + 1) + " Position");
 				return temp;
 			}
 			temp = temp.getNext();
@@ -127,9 +126,9 @@ public class LinkedList <T extends Comparable<T>> {
 		return null;
 	}
 
-	public boolean insertAfterNode(LinkedList<T> list, int data, int prevNodeData) {
+	public boolean insertAfterNode(LinkedList<T> list, int data, T prevNodeData) {
 		Node<T> new_Node = new Node(data);
-		Node<T> tempPrevNode = search(list, prevNodeData);
+		INode<T> tempPrevNode = search(list, prevNodeData);
 		if (tempPrevNode == null) {
 			return false;
 		}
@@ -142,7 +141,8 @@ public class LinkedList <T extends Comparable<T>> {
 	}
 
 	public void deleteGivenNode(LinkedList<T> list, int data2) {
-		Node<T> temp = list.head, prev = null;
+		INode<T> temp = list.head;
+		INode<T> prev = null;
 		// If head node itself holds the key to be deleted
 		if (temp != null && temp.getKey().equals(data2)) {
 			list.head = temp.getNext(); // Changed head
@@ -163,4 +163,26 @@ public class LinkedList <T extends Comparable<T>> {
 		// Unlink the node from linked list
 		prev.setNext(temp.getNext());
 	}
+
+	//Inserting Node in the LinkedList
+	public LinkedList<T> appendNode(LinkedList<T> list, INode<T> data) {
+		if (list.head == null) {
+			list.head = data;
+		} else {
+			INode<T> last = list.head;
+			while (last.getNext() != null) {
+				last = last.getNext();
+			}
+			last.setNext(data);
+		}
+
+		return list;
+	}
+	
+	@Override
+	public String toString() {
+		return "LinkedList [head=" + head + "]";
+	}
+	
+	
 }

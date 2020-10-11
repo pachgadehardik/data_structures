@@ -21,6 +21,8 @@ public class Driver {
 		System.out.println("------------Queue-----------------");
 		System.out.println("12-Enque Elements in the Queue: ");
 		System.out.println("13-Deque Elements in the Queue: ");
+		System.out.println("-----------------HashTable using LinkedList------------------------------");
+		System.out.println("14-Creating Hashtable using LinkedList and DO the Operations: ");
 		System.out.println("0-Exit");
 	}
 
@@ -30,7 +32,6 @@ public class Driver {
 		LinkedList<Integer> list = new LinkedList<>();
 		Stack<Integer> stack = new Stack<>();
 		Queue<Integer> queue = new Queue<>();
-
 		boolean flag = true;
 		while (flag) {
 			displayMenu();
@@ -139,6 +140,18 @@ public class Driver {
 				} catch (Exception e) {
 					System.out.println("Queue is Empty");
 				}
+			case 14:
+				String sentence = "To be or not to be";
+				MyHashTable<String,Integer> myHashTable = new MyHashTable<String, Integer>();
+				String words[] = sentence.toLowerCase().split(" ");
+				for(String word:words) {
+					Integer value = myHashTable.get(word);
+					if(value == null) value = 1;
+					else value=value+1;
+					myHashTable.add(word,value);
+				}
+				System.out.println(myHashTable);
+				break;
 			default:
 				flag = false;
 				break;
