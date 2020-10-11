@@ -23,6 +23,7 @@ public class Driver {
 		System.out.println("13-Deque Elements in the Queue: ");
 		System.out.println("-----------------HashTable using LinkedList------------------------------");
 		System.out.println("14-Creating Hashtable using LinkedList and DO the Operations: ");
+		System.out.println("15-Creating LinkedHashMaps for creating multiple index wise LinkedList: ");
 		System.out.println("0-Exit");
 	}
 
@@ -142,15 +143,36 @@ public class Driver {
 				}
 			case 14:
 				String sentence = "To be or not to be";
-				MyHashTable<String,Integer> myHashTable = new MyHashTable<String, Integer>();
+				MyHashTable<String, Integer> myHashTable = new MyHashTable<String, Integer>();
 				String words[] = sentence.toLowerCase().split(" ");
-				for(String word:words) {
+				for (String word : words) {
 					Integer value = myHashTable.get(word);
-					if(value == null) value = 1;
-					else value=value+1;
-					myHashTable.add(word,value);
+					if (value == null)
+						value = 1;
+					else
+						value = value + 1;
+					myHashTable.add(word, value);
 				}
 				System.out.println(myHashTable);
+				break;
+
+			case 15:
+				String sentence1 = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
+				MyLinkedHashMap<String, Integer> myLinkedHashMap = new MyLinkedHashMap<String, Integer>();
+
+				String words1[] = sentence1.toLowerCase().split(" ");
+				for (String word : words1) {
+					Integer value = myLinkedHashMap.get(word);
+					if (value == null)
+						value = 1;
+					else
+						value = value + 1;
+					myLinkedHashMap.add(word, value);
+				}
+
+				System.out.println(myLinkedHashMap);
+				int frequency = myLinkedHashMap.get("paranoid");
+				System.out.println("Frequency is : "+frequency);
 				break;
 			default:
 				flag = false;
