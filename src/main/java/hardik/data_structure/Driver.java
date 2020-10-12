@@ -171,7 +171,7 @@ public class Driver {
 					myLinkedHashMap.add(word, value);
 				}
 				System.out.println(myLinkedHashMap);
-				int frequency = myLinkedHashMap.get("paranoid");
+				int frequency = myLinkedHashMap.get("they");
 				System.out.println("Frequency is : " + frequency);
 				System.out.println("Enter the word to remove from the phrase: ");
 				String wordToRemove = sc.next();

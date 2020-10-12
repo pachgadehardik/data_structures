@@ -29,7 +29,6 @@ public class LinkedList <T extends Comparable<T>> {
 	
 	public LinkedList<T> insert(LinkedList<T> list, T data) {
 		INode<T> new_Node = new Node<T>(data);
-//		new_Node.setNext(null);
 
 		if (list.head == null) {
 			list.head = new_Node;
@@ -116,7 +115,7 @@ public class LinkedList <T extends Comparable<T>> {
 
 		INode<T> temp = list.head;
 		int count = 0;
-		while (temp != null && temp.getNext() != null) {
+		while (temp != null) {
 			if (temp.getKey().equals(data)) {
 				return temp;
 			}

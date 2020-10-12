@@ -1,6 +1,6 @@
 package hardik.data_structure;
 
-public class MyHashTable<K extends Comparable<K>, V extends Comparable<V>> {
+public class MyHashTable<K extends Comparable<K>, V extends Comparable<V>> extends LinkedList<K> {
 
 	LinkedList<K> hashTable;
 	
