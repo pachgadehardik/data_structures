@@ -1,4 +1,4 @@
-package hardik.data_structure;
+package com.capg.hardik.data_structure;
 
 import java.util.Scanner;
 
@@ -180,6 +180,7 @@ public class Driver {
 				break;
 			default:
 				flag = false;
+				sc.close();
 				break;
 			}
 

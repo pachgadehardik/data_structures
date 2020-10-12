@@ -5,6 +5,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.capg.hardik.data_structure.Stack;
+
 public class StackTest {
 
 	Stack<Integer> stack;

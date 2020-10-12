@@ -7,6 +7,9 @@ import java.util.Scanner;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.capg.hardik.data_structure.MyBinaryTree;
+import com.capg.hardik.data_structure.Node.MyBinaryNode;
+
 public class MyBinaryTreeTest {
 
 	MyBinaryTree<Integer> myBinaryTree;

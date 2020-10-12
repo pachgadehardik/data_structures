@@ -1,4 +1,6 @@
-package hardik.data_structure;
+package com.capg.hardik.data_structure;
+
+import com.capg.hardik.data_structure.Node.MyBinaryNode;
 
 public class MyBinaryTree<K extends Comparable<K>> {
 

@@ -1,4 +1,6 @@
-package hardik.data_structure;
+package com.capg.hardik.data_structure;
+
+import com.capg.hardik.data_structure.Node.MapNode;
 
 public class MyHashTable<K extends Comparable<K>, V extends Comparable<V>> extends LinkedList<K> {
 

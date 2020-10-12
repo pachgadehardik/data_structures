@@ -1,6 +1,9 @@
-package hardik.data_structure;
+package com.capg.hardik.data_structure;
 
 import java.util.Scanner;
+
+import com.capg.hardik.data_structure.Node.Node;
+import com.capg.hardik.data_structure.Node.Node.INode;
 
 /**
  * Hello world!

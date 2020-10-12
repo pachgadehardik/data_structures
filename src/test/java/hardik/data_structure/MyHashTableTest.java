@@ -3,6 +3,8 @@ package hardik.data_structure;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.capg.hardik.data_structure.MyHashTable;
+
 public class MyHashTableTest {
 
 	@Test

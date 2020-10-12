@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.capg.hardik.data_structure.MyLinkedHashMap;
+
 public class MyLinkedHashMapTest {
 
 	MyLinkedHashMap<String, Integer> myLinkedHashMap;

@@ -2,6 +2,8 @@ package hardik.data_structure;
 
 import org.junit.*;
 
+import com.capg.hardik.data_structure.LinkedList;
+
 public class LinkedListTest {
 
 	LinkedList list;

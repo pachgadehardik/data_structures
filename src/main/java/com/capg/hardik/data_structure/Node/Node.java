@@ -1,4 +1,6 @@
-package hardik.data_structure;
+package com.capg.hardik.data_structure.Node;
+
+import com.capg.hardik.data_structure.Node.Node.INode;
 
 public class Node<T extends Comparable<T>> implements INode<T> {
 	private INode<T> next;

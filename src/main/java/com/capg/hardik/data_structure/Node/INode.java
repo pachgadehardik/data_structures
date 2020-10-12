@@ -1,4 +1,4 @@
-package hardik.data_structure;
+package com.capg.hardik.data_structure.Node;
 
 public interface INode<T>{
 
