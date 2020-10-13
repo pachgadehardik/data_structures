@@ -1,6 +1,6 @@
 package com.capg.hardik.data_structure;
 
-import com.capg.hardik.data_structure.Node.Node.INode;
+import com.capg.hardik.data_structure.Node.INode;
 
 /**
  * @author hardi

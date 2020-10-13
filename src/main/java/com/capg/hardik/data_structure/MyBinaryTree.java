@@ -44,21 +44,18 @@ public class MyBinaryTree<K extends Comparable<K>> {
 	private boolean searchElementInBinaryTree(MyBinaryNode<K> current, K key) {
 		boolean flag = false;
 		if (current == null) {
-			System.out.println("Tree is Empty");
-			return flag;
+			System.out.println("No Element");
 		} else {
 			if (current.key == key) {
 				flag = true;
 				System.out.println("Element Found!!");
-				return flag;
 			}
-			if (current.key.compareTo(key) > 0) {
-				flag = true;
-				searchElementInBinaryTree(current.left, key);
+			else if (current.key.compareTo(key) > 0) {
+				flag = searchElementInBinaryTree(current.left, key);
+				
 			}
-			if (current.key.compareTo(key) < 0) {
-				flag = true;
-				searchElementInBinaryTree(current.right, key);
+			else if (current.key.compareTo(key) < 0) {
+				flag = searchElementInBinaryTree(current.right, key);
 			}
 		}
 		return flag;
